@@ -11,6 +11,7 @@ body {
     height: 950px;
     background-color: blue;
     display: flex;
+    border: solid white 10px;
 }
 
 .container {
