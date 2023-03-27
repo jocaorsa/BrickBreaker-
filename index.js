@@ -1,6 +1,6 @@
 let ball = new Ball
-
 let paddle = new Paddle
+//let bricks = new Bricks
 
 ball.ball.addEventListener("click", function (e) {
     if (!ball.moving) {

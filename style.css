@@ -8,12 +8,15 @@ body {
 .game {
     position: absolute;
     width: 850px;
-    height: 950px;
+    height: 1100px;
     background-color: blue;
     display: flex;
     border: solid white 10px;
 }
+.cabecera {
+    border: rgb(255, 255, 255);
 
+}
 .container {
     display: flex;
     position: relative;
@@ -32,18 +35,24 @@ body {
 #paddle {
     position: absolute;
     width: 175px;
-    height: 15px;
+    height: 5px;
     background-color: brown;
     left: 337px;
     top: 900px;
 }
 
-.bricks {
+/*#bricks {
     position: absolute;
     width: 100px;
     height: 55px;
     background-color: green;
     left: 15px;
     top: 15px;
-
+}
+*/
+table {
+    width: 820px;
+    height: 15px;
+    border:solid 1px;
+    align: center;
 }
