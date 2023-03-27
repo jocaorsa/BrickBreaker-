@@ -15,8 +15,8 @@ function Ball() {
 Ball.prototype.moveBallY = function() {
     console.log(paddle)
     console.log(ball)
-    if (paddle.paddleLeft < ball.ballLeft && paddle.paddleTop < ball.ballTopBottom &&
-        paddle.paddleLeftRight > ball.ballLeftRight && paddle.paddleTopBottom > ball.ballTopBottom) {
+    if (paddle.paddleLeft < ball.ballLeftRight && paddle.paddleTop < ball.ballTopBottom &&
+        paddle.paddleLeftRight > ball.ballLeft && paddle.paddleTopBottom > ball.ballTop) {
         ball.direction *= -1;
         // ball.direction2 *= -1;
     }
@@ -31,13 +31,4 @@ Ball.prototype.moveBallX = function() {
     ball.ballLeft += 10 * ball.direction2;
     ball.ballLeftRight += 10 * ball.direction2;
     this.ball.style.left = ball.ballLeft + "px";
-}
-
-Ball.prototype.checkpaddle = function(paddle){
-    if (paddle.paddleLeft < ball.ballLeftRight && paddle.paddleTop < ball.ballTopBottom &&
-        paddle.paddleLeftRight > ball.ballLeft && paddle.paddleTopBottom > ball.ballTop) {
-        console.log("collision")
-        //ball.direction *= -1;
-        // ball.direction2 *= -1;
-    }
 }
