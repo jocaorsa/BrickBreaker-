@@ -1,8 +1,10 @@
 let ball = new Ball
 
+let paddle = new Paddle
+
 ball.ball.addEventListener("click", function (e) {
-    if (!ball.ball.moving) {
-        timerId = setInterval(ball.moveBallY, 30);
+    if (!ball.moving) {
+        timerId = setInterval(ball.moveBallY, 30, paddle);
     } else {
         clearInterval(timerId)
     }
@@ -10,34 +12,32 @@ ball.ball.addEventListener("click", function (e) {
 })
 
 ball.ball.addEventListener("click", function (e) {
-    if (!ball.ball.moving2) {
-        timerId = setInterval(ball.moveBallX, 30);
+    if (!ball.moving2) {
+        timerId = setInterval(ball.moveBallX, 30, paddle);
     } else {
         clearInterval(timerId2)
     }
     ball.moving2 = !ball.moving2;
 })
 
-
-let paddle = new Paddle
-
 window.addEventListener('keydown', function (event) {
     switch (event.code) {
         case "ArrowLeft":
             if (paddle.paddleLeft >= 0) {
                 paddle.paddleLeft -= 10;
+                paddle.paddleLeftRight -= 10;
                 this.paddle.style.left = paddle.paddleLeft + "px";
             }
             break
         case "ArrowRight":
             if (paddle.paddleLeft <= 675) {
                 paddle.paddleLeft += 10;
+                paddle.paddleLeftRight += 10;
                 this.paddle.style.left = paddle.paddleLeft + "px";
             }
             break
     }
 })
-
 
 const collisionPaddleBall = function () {
     if (paddle.paddleLeft < ball.ballLeftRight && paddle.paddleTop < ball.ballTopBottom &&
