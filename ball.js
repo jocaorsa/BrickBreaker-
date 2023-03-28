@@ -34,3 +34,4 @@ Ball.prototype.moveBallX = function() {
     ball.ballLeftRight += 10 * ball.direction2;
     this.ball.style.left = ball.ballLeft + "px";
 }
+

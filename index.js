@@ -1,24 +1,71 @@
-let ball = new Ball
-let paddle = new Paddle
-//let bricks = new Bricks
+let ball = new Ball;
+let paddle = new Paddle;
+
+const bricks = [
+    new Brick(10, 20),
+    new Brick(50, 20),
+    new Brick(90, 20),
+    new Brick(130, 20),
+    new Brick(170, 20),
+    new Brick(10, 190),
+    new Brick(50, 190),
+    new Brick(90, 190),
+    new Brick(130, 190),
+    new Brick(170, 190),
+    new Brick(10, 360),
+    new Brick(50, 360),
+    new Brick(90, 360),
+    new Brick(130, 360),
+    new Brick(170, 360),
+    new Brick(10, 520),
+    new Brick(50, 520),
+    new Brick(90, 520),
+    new Brick(130, 520),
+    new Brick(170, 520),
+    new Brick(10, 680),
+    new Brick(50, 680),
+    new Brick(90, 680),
+    new Brick(130, 680),
+    new Brick(170, 680),
+];
+
+bricks[0].addBricks();
 
 ball.ball.addEventListener("click", function (e) {
     if (!ball.moving) {
-        timerId = setInterval(ball.moveBallY, 30, paddle);
+        timerId = setInterval(function() {
+            if (ball.ballTop < 5 || ball.ballTop > 1100) { ball.direction *= -1; };
+            ball.ballTop += 10 * ball.direction;
+            ball.ballTopBottom += 10 * ball.direction;
+            ball.ball.style.top = ball.ballTop + "px";
+        }, 30);
     } else {
-        clearInterval(timerId)
+        clearInterval(timerId);
     }
     ball.moving = !ball.moving;
 })
 
 ball.ball.addEventListener("click", function (e) {
     if (!ball.moving2) {
-        timerId = setInterval(ball.moveBallX, 30, paddle);
+        timerId2 = setInterval(function() {
+            if (paddle.paddleLeft < ball.ballLeftRight && paddle.paddleTop < ball.ballTopBottom &&
+                paddle.paddleLeftRight > ball.ballLeft && paddle.paddleTopBottom > ball.ballTop) {
+                ball.direction *= -1;
+                //ball.direction2 *= -1;
+            }
+            if (ball.ballLeft < 5 || ball.ballLeft > 800) { ball.direction2 *= -1; };
+            ball.ballLeft += 10 * ball.direction2;
+            ball.ballLeftRight += 10 * ball.direction2;
+            ball.ball.style.left = ball.ballLeft + "px";
+            bricks[0].checkBricksCollisions();
+            }, 30);
     } else {
-        clearInterval(timerId2)
+        clearInterval(timerId2);
     }
     ball.moving2 = !ball.moving2;
 })
+
+
 
 window.addEventListener('keydown', function (event) {
     switch (event.code) {
@@ -28,68 +75,13 @@ window.addEventListener('keydown', function (event) {
                 paddle.paddleLeftRight -= 10;
                 this.paddle.style.left = paddle.paddleLeft + "px";
             }
-            break
+            break;
         case "ArrowRight":
             if (paddle.paddleLeft <= 675) {
                 paddle.paddleLeft += 10;
                 paddle.paddleLeftRight += 10;
                 this.paddle.style.left = paddle.paddleLeft + "px";
             }
-            break
+            break;
     }
 })
-
-const collisionPaddleBall = function () {
-    if (paddle.paddleLeft < ball.ballLeftRight && paddle.paddleTop < ball.ballTopBottom &&
-        paddle.paddleLeftRight > ball.ballLeft && paddle.paddleTopBottom > ball.ballTop) {
-        console.log("collision")
-        //ball.direction *= -1;
-       // ball.direction2 *= -1;
-    }
-}
-
-
-
-
-
-
-
-//let ballTop = 450;
-//let direction = 1;
-//const moveBallY = function () {}
-//let timerId;ballTop
-  /*   } else {
-        clearInterval(timerId);
-    }
-    moving = !moving;
-}) */
-
-//let ballLeft = 400;
-//let direction2 = 1;
-//const moveBallX = function () {}
-//let timerId2;
-//let moving2 = false;
-
-
-
-//let paddleLeft = 337;
-
-
-
-/*
-let paddleTop = paddle.style.top;
-let paddleTopBottom = paddleTop + paddle.style.height;
-let paddleLeftRight = paddleLeft + paddle.style.width;
-*/
-
-
-
-/*console.log(paddleLeft)
-console.log(ballLeft)
-console.log(ballTop)
-console.log(paddleTopBottom)
-console.log()
-console.log()
-console.log()
-console.log(collisionPaddleBall()); */
-//collisionPaddleBall()
