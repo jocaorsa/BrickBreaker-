@@ -1,7 +1,7 @@
 function Ball() {
     this.ball = document.getElementById("ball");
     this.ballTop = 450
-    this.direction = 1
+    this.direction = -1
     this.timerId
     this.moving = false
     this.ballLeft = 400
@@ -34,4 +34,3 @@ Ball.prototype.moveBallX = function() {
     ball.ballLeftRight += 10 * ball.direction2;
     this.ball.style.left = ball.ballLeft + "px";
 }
-

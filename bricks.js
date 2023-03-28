@@ -22,7 +22,6 @@ Brick.prototype.addBricks = function() {
 
 
 Brick.prototype.checkBricksCollisions = function() {
-    console.log("toi trabajando");
     for (let i = 0; i < bricks.length; i++) {
         if (ball.ballLeft <= bricks[i].brickLeftRight && ball.ballTop <= bricks[i].brickTopBottom &&
             ball.ballLeftRight >= bricks[i].brickLeft && ball.ballTopBottom >= bricks[i].brickTop) {
@@ -30,35 +29,12 @@ Brick.prototype.checkBricksCollisions = function() {
             allBricks[i].classList.remove("brick");
             bricks.splice(i, 1);
             ball.direction *= -1;
-            console.log("hola, buenas tardes");
+        }
+        if (bricks.length == 0) {
+            victory.classList.remove("off");
+            restartButton.className += "off";
+            clearInterval(timerId);
+            clearInterval(timerId2);
         }
     }
 }
-
-
-
-/*const addBricks = function () {
-    for (let i = 0; i < bricks.length; i++) {
-        const brick = document.createElement("div");
-        brick.classList.add("brick");
-        brick.style.left = bricks[i].brickLeft + "px";
-        brick.style.top = bricks[i].brickTop + "px";
-        game.appendChild(brick);
-    }
-}
-
-addBricks();
-
-const checkBricksCollisions = function() {
-    console.log("toi trabajando")
-    for (let i = 0; i < bricks.length; i ++) {
-        if (ball.ballLeft < bricks[i].brickLeftRight && ball.ballTop < bricks[i].brickTopBottom &&
-            ball.brickLeftRight > bricks[i].brickLeft && ball.brickTopBottom > bricks[i].brickTop) {
-            const allBricks = Array.from(document.querySelectorAll(".brick"));
-            allBricks[i].classList.remove("brick");
-            blocks.splice(i, 1);
-            ball.direction *= -1;
-            console.log("hola, buenas tardes")
-            }
-    }
-}*/

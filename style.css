@@ -43,5 +43,49 @@ body {
     width: 100px;
     height: 20px;
     background-color: orange;
-    border: solid;
+    border: solid 5px;
+}
+
+
+.start {
+    display: flex;
+    background-color: red;
+    width: 860px;
+    height: 1100px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-button {
+    height: 50px;
+}
+
+.gameover {
+    display: flex;
+    background-color: red;
+    width: 860px;
+    height: 1100px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.victory {
+    display: flex;
+    background-color: greenyellow;
+    width: 860px;
+    height: 1100px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart-button {
+    height: 50px;
+}
+
+
+.off {
+    display: none;
 }
