@@ -5,7 +5,7 @@ body {
     justify-content: center;
 }
 
-.game {
+#game {
     position: absolute;
     width: 850px;
     height: 1100px;
@@ -13,10 +13,7 @@ body {
     display: flex;
     border: solid white 10px;
 }
-.cabecera {
-    border: rgb(255, 255, 255);
 
-}
 .container {
     display: flex;
     position: relative;
@@ -41,18 +38,10 @@ body {
     top: 900px;
 }
 
-/*#bricks {
+.brick {
     position: absolute;
     width: 100px;
-    height: 55px;
-    background-color: green;
-    left: 15px;
-    top: 15px;
-}
-*/
-table {
-    width: 820px;
-    height: 15px;
-    border:solid 1px;
-    align: center;
+    height: 20px;
+    background-color: blueviolet;
+    border: solid;
 }

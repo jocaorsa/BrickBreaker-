@@ -20,7 +20,7 @@ Ball.prototype.moveBallY = function() {
     if (ball.ballTop < 5 || ball.ballTop > 1100) { ball.direction *= -1; };
     ball.ballTop += 10 * ball.direction;
     ball.ballTopBottom += 10 * ball.direction;
-    this.ball.style.top = ball.ballTop + "px"; 
+    this.ball.style.top = ball.ballTop + "px";
 }
 
 Ball.prototype.moveBallX = function() {
