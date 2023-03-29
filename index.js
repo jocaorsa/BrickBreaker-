@@ -6,7 +6,7 @@ const bricks = [
     new Brick(50, 20),
     new Brick(90, 20),
     new Brick(130, 20),
-   /* new Brick(170, 20),
+    new Brick(170, 20),
     new Brick(10, 190),
     new Brick(50, 190),
     new Brick(90, 190),
@@ -26,12 +26,10 @@ const bricks = [
     new Brick(50, 680),
     new Brick(90, 680),
     new Brick(130, 680),
-    new Brick(170, 680),*/
+    new Brick(170, 680),
 ];
 
 bricks[0].addBricks();
-
-
 
 
 
