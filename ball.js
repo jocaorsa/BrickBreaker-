@@ -16,11 +16,11 @@ function Ball() {
 Ball.prototype.moveBall = function () {
     if (!ball.moving) {
         timerId = setInterval(function () {
-            if (ball.ballTop < 5 || ball.ballTop > 1100) { ball.direction *= -1; };
+            if (ball.ballTop < 5) { ball.direction *= -1; };
             ball.ballTop += 10 * ball.direction;
             ball.ballTopBottom += 10 * ball.direction;
             ball.ball.style.top = ball.ballTop + "px";
-            if (ball.ballTop > 1000) {
+            if (ball.ballTop > 875) {
                 livesCounter--;
                 if (livesCounter != 0) {
                     ball = new Ball();

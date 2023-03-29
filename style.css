@@ -1,17 +1,23 @@
 body {
+    height: 1vh;
     margin: 0;
-    background-color: black;
+    background-image: url("./images/fondo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
     display: flex;
+    align-content: center;
     justify-content: center;
 }
 
 #game {
     position: absolute;
+    background-image: url("./images/game.gif");
+    background-repeat: no-repeat;
+    background-size: 100%;
     width: 850px;
-    height: 950px;
-    background-color: blue;
+    height: 920px;
     display: flex;
-    border: solid white 10px;
+    border: solid #2c9cbe 7px;
 }
 
 .container {
@@ -23,49 +29,73 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: yellow;
+    background-image: url("./images/ball.png");
+    background-color: transparent;
     border-radius: 100%;
     left: 400px;
     top: 450px;
 }
 
+.score {
+    position: absolute;
+    right: 120px;
+    width: 350px;
+    border: steelblue solid 5px;
+    height: 150px;
+}
+
+.life {
+    position: absolute;
+    left: 120px;
+    width: 350px;
+    border: steelblue solid 5px;
+    height: 150px;
+}
+
 #paddle {
     position: absolute;
     width: 175px;
-    height: 5px;
-    background-color: brown;
+    height: 50px;
+    background-image: url("./images/paddle.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
     left: 337px;
-    top: 900px;
+    top: 825px;
 }
 
 .brick {
+    background-image: url("./images/cloud1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: absolute;
     width: 100px;
     height: 20px;
-    background-color: orange;
-    border: solid 5px;
 }
-
 
 .start {
     display: flex;
-    background-color: red;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
     width: 860px;
-    height: 1100px;
+    height: 930px;
     z-index: 1;
     justify-content: center;
     align-items: center;
 }
 
 #start-button {
-    height: 50px;
+    background-image: url("./images/Start.png");
+    background-color: transparent;
+    width: 200px;
+    height: 85px;
 }
 
 .gameover {
     display: flex;
-    background-color: red;
+    background-color: transparent;
     width: 860px;
-    height: 1100px;
+    height: 930px;
     z-index: 1;
     justify-content: center;
     align-items: center;
@@ -73,23 +103,24 @@ body {
 
 .victory {
     display: flex;
-    background-color: greenyellow;
+    background-color: transparent;
     width: 860px;
-    height: 1100px;
+    height: 930px;
     z-index: 1;
     justify-content: center;
     align-items: center;
-}
-
-#play-again-button{
-    height: 50px;
 }
 
 #restart-button {
     height: 50px;
 }
 
-
 .off {
     display: none;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
