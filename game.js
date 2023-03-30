@@ -17,9 +17,16 @@ startButton.addEventListener("click", function (e) {
 
 restartButton.addEventListener("click", function (e) {
     gameOver.classList.add("off");
+    bricks[0].deleteFromDom();
+    bricks = creationOfBricks();
+    bricks[0].addBricks();
     ball.moveBall();
 })
 
-playAgainButton.addEventListener("click", function(e) {
-    location.reload();
-})
+/*playAgainButton.addEventListener("click", function(e) {
+    
+    bricks[0].deleteFromDom();
+    bricks = creationOfBricks();
+    bricks[0].addBricks();
+    ball.moveBall();
+})*/

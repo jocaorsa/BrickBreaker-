@@ -1,7 +1,7 @@
 let ball = new Ball;
 let paddle = new Paddle;
 
-const bricks = [
+const myBricks = [
     new Brick(20, 40),
     new Brick(60, 40),
     new Brick(100, 40),
@@ -28,6 +28,17 @@ const bricks = [
     new Brick(140, 700),
     new Brick(180, 700),
 ];
+
+function creationOfBricks() {
+    let bricks = [];
+    for (let i = 0; i < myBricks.length; i++) {
+        bricks.push(myBricks[i]);
+    }
+    return bricks;
+}
+
+let bricks = creationOfBricks();
+
 
 bricks[0].addBricks();
 
