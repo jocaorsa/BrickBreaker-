@@ -32,7 +32,6 @@ Brick.prototype.checkBricksCollisions = function () {
         }
         if (bricks.length == 0) {
             victory.classList.remove("off");
-            restartButton.className += "off";
             clearInterval(timerId);
             clearInterval(timerId2);
         }

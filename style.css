@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 body {
     height: 1vh;
     margin: 0;
+
     background-image: url("./images/fondo.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -11,6 +13,7 @@ body {
 
 #game {
     position: absolute;
+    font-family: 'Monoton', cursive;
     background-image: url("./images/game.gif");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -37,18 +40,26 @@ body {
 }
 
 .score {
+    display: flex;
     position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
     right: 120px;
     width: 350px;
-    border: steelblue solid 5px;
     height: 150px;
 }
 
 .life {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Monoton', cursive;
     position: absolute;
     left: 120px;
     width: 350px;
-    border: steelblue solid 5px;
+    
     height: 150px;
 }
 
@@ -81,19 +92,30 @@ body {
     height: 930px;
     z-index: 1;
     justify-content: center;
-    align-items: center;
+    align-items:center;
 }
 
 #start-button {
-    background-image: url("./images/Start.png");
     background-color: transparent;
-    width: 200px;
-    height: 85px;
+    width: 201px;
+    height: 105px;
+    margin: 100px auto;
+    background-image: linear-gradient(to left, rgb(153, 152, 152), rgb(133, 122, 59));
+    background-image: URL("./images/start.png");
+    background-color: hsl(58, 100%, 50%);
+    border: px inset white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    animation: brath 8s linear infinite;
+    box-shadow: -1px 0px 10px #000;
 }
 
 .gameover {
     display: flex;
-    background-color: transparent;
+    background-image: url("./images/gameover.jpg");
     width: 860px;
     height: 930px;
     z-index: 1;
@@ -103,7 +125,7 @@ body {
 
 .victory {
     display: flex;
-    background-color: transparent;
+    background-image: url("./images/win.png");
     width: 860px;
     height: 930px;
     z-index: 1;
@@ -112,7 +134,39 @@ body {
 }
 
 #restart-button {
-    height: 50px;
+    background-color: transparent;
+    width: 201px;
+    height: 105px;
+    margin: 100px auto;
+    background-image: linear-gradient(to left, rgb(153, 152, 152), rgb(133, 122, 59));
+    background-image: URL("./images/restart.png");
+    background-color: hsl(58, 100%, 50%);
+    border: px inset white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    animation: brath 8s linear infinite;
+    box-shadow: -1px 0px 10px #000;
+}
+
+#play-again-button{
+    background-color: transparent;
+        width: 201px;
+        height: 105px;
+        margin: 100px auto;
+        background-image: linear-gradient(to left, rgb(153, 152, 152), rgb(133, 122, 59));
+        background-image: URL("./images/pagain.png");
+        background-color: hsl(58, 100%, 50%);
+        border: 4px inset white;
+        text-align: center;
+        line-height: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: capitalize;
+        animation: brath 8s linear infinite;
+        box-shadow: -1px 0px 10px #000;
 }
 
 .off {
@@ -123,4 +177,22 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes brath {
+    0% {
+        transform: scale(.9);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

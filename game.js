@@ -23,10 +23,11 @@ restartButton.addEventListener("click", function (e) {
     ball.moveBall();
 })
 
-/*playAgainButton.addEventListener("click", function(e) {
-    
-    bricks[0].deleteFromDom();
+playAgainButton.addEventListener("click", function(e) {
+    victory.classList.add("off");
     bricks = creationOfBricks();
     bricks[0].addBricks();
+    ball = new Ball();
+    livesCounter = 3;
     ball.moveBall();
-})*/
+})
