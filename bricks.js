@@ -1,5 +1,6 @@
 const game = document.getElementById("game");
 
+//Function constructor of Bricks.
 function Brick(top, left) {
     this.brickWidth = 100;
     this.brickHeight = 20;
@@ -9,7 +10,7 @@ function Brick(top, left) {
     this.brickTopBottom = top + this.brickHeight;
 }
 
-
+//Add bricks to the DOM.
 Brick.prototype.addBricks = function () {
     for (let i = 0; i < bricks.length; i++) {
         const brick = document.createElement("div");
@@ -29,14 +30,17 @@ Brick.prototype.checkBricksCollisions = function () {
             allBricks[i].classList.remove("brick");
             bricks.splice(i, 1);
             ball.direction *= -1;
+            if (bricks.length > 0) {brickBreaked.play();}
         }
         if (bricks.length == 0) {
             victory.classList.remove("off");
+            victorySong.play();
             clearInterval(timerId);
             clearInterval(timerId2);
         }
     }
 }
+
 
 Brick.prototype.deleteFromDom = function () {
     let bricksLeft = document.getElementsByClassName("brick");

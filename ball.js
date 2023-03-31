@@ -16,12 +16,33 @@ function Ball() {
 Ball.prototype.moveBall = function () {
     if (!ball.moving) {
         timerId = setInterval(function () {
-            if (ball.ballTop < 5) { ball.direction *= -1; };
+            if (ball.ballTop < 5) { ball.direction *= -1; wallCollision.play();};
             ball.ballTop += 10 * ball.direction;
             ball.ballTopBottom += 10 * ball.direction;
             ball.ball.style.top = ball.ballTop + "px";
             if (ball.ballTop > 875) {
                 livesCounter--;
+                switch (livesCounter) {
+                    case 2:
+                        life1.classList.add("off");
+                        lifeOut.play();
+                        setTimeout(() => {
+                            reload.play();
+                        }, 500);
+                        break;
+                    case 1:
+                        life2.classList.add("off");
+                        lifeOut.play();
+                        setTimeout(() => {
+                            reload.play();
+                        }, 500);
+                        break;
+                    case 0:
+                        life3.classList.add("off");
+                        lifeOut.play();
+                        loseSong.play();
+                        break;
+                }
                 if (livesCounter != 0) {
                     ball = new Ball();
                 } else {
@@ -39,8 +60,9 @@ Ball.prototype.moveBall = function () {
             if (paddle.paddleLeft < ball.ballLeftRight && paddle.paddleTop < ball.ballTopBottom &&
                 paddle.paddleLeftRight > ball.ballLeft && paddle.paddleTopBottom > ball.ballTop) {
                 ball.direction *= -1;
+                paddleCollision.play();
             }
-            if (ball.ballLeft < 5 || ball.ballLeft > 800) { ball.direction2 *= -1; };
+            if (ball.ballLeft < 5 || ball.ballLeft > 800) { ball.direction2 *= -1; wallCollision.play();};
             ball.ballLeft += 10 * ball.direction2;
             ball.ballLeftRight += 10 * ball.direction2;
             ball.ball.style.left = ball.ballLeft + "px";

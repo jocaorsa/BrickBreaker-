@@ -13,6 +13,15 @@
 
 <body>
 
+    <audio src="/music/Red River Valley----(Harmonica)----The Old West.mp3" autoplay="true" loop="true" id="start-music"></audio>
+    <audio src="/music/361546__inspectorj__bus-air-brake-a.wav" id="brick-breaked"></audio>
+    <audio src="/music/340978__projectsu012__hiss-then-sizzle_mp3cut.net.wav" id="paddle-collision"></audio>
+    <audio src="/music/204028__duckduckpony__tumbleweed_impact_001.wav" id="wall-collision"></audio>
+    <audio src="/music/476740__cjdeets__shotscifipowerdown.wav" id="life-out"></audio>
+    <audio src="/music/TheEntertainer_mp3cut.net_9.mp3" id="victory-song"></audio>
+    <audio src="music/396331__nioczkus__1911-reload.mp3" id="reload"></audio>
+    <audio src="/music/youlose.mp3" id="lose-song"></audio>
+
     <div class="start"><button id="start-button"></button></div>
     <div class="gameover off"><button id="restart-button"></button></div>
     <div class="victory off"><button id="play-again-button"></button></div>
@@ -20,20 +29,25 @@
     <div class="life"><span>
             <img src="./images/lives.png">
             <img src="./images/rev.png" alt="pium">
-            <img src="./images/Life1.png" alt="life">
-            <img src="./images/Life2.png" alt="life">
-            <img src="./images/Life3.png" alt="life">
+            <img src="./images/Life1.png" alt="life" class="life1">
+            <img src="./images/Life2.png" alt="life" class="life2">
+            <img src="./images/Life3.png" alt="life" class="life3">
         </span>
     </div>
     <div id="game">
+        <div class="night off"></div>
+        <div class="night1 off"></div>
+        <div class="night2 off"></div>
+        <div class="night3 off"></div>
+        <div class="night4 off"></div>
+        <div class="night5 off"></div>
         <div class="container">
             <div id="ball"></div>
             <div id="paddle"></div>
 
         </div>
     </div>
-    <style>
-    </style>
+
 </body>
 
 </html>

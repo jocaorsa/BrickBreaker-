@@ -59,8 +59,50 @@ body {
     position: absolute;
     left: 120px;
     width: 350px;
-    
+
     height: 150px;
+}
+
+.night {
+    background: rgba(0, 0, 80, 0.1);
+    position: absolute;
+    width: 850px;
+    height: 920px;
+}
+
+.night1 {
+    background: rgba(0, 0, 80, 0.2);
+    position: absolute;
+    width: 850px;
+    height: 920px;
+}
+
+.night2 {
+    background: rgba(0, 0, 80, 0.3);
+    position: absolute;
+    width: 850px;
+    height: 920px;
+}
+
+.night3 {
+    background: rgba(0, 0, 80, 0.4);
+    position: absolute;
+    width: 850px;
+    height: 920px;
+}
+
+.night4 {
+    background: rgba(0, 0, 80, 0.5);
+    position: absolute;
+    width: 850px;
+    height: 920px;
+}
+
+.night5 {
+    background: rgba(0, 0, 80, 0.6);
+    position: absolute;
+    width: 850px;
+    height: 920px;
 }
 
 #paddle {
@@ -92,7 +134,7 @@ body {
     height: 930px;
     z-index: 1;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 #start-button {
@@ -111,6 +153,7 @@ body {
     text-transform: capitalize;
     animation: brath 8s linear infinite;
     box-shadow: -1px 0px 10px #000;
+    cursor: pointer;
 }
 
 .gameover {
@@ -149,24 +192,26 @@ body {
     text-transform: capitalize;
     animation: brath 8s linear infinite;
     box-shadow: -1px 0px 10px #000;
+    cursor: pointer;
 }
 
-#play-again-button{
+#play-again-button {
     background-color: transparent;
-        width: 201px;
-        height: 105px;
-        margin: 100px auto;
-        background-image: linear-gradient(to left, rgb(153, 152, 152), rgb(133, 122, 59));
-        background-image: URL("./images/pagain.png");
-        background-color: hsl(58, 100%, 50%);
-        border: 4px inset white;
-        text-align: center;
-        line-height: 50px;
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: capitalize;
-        animation: brath 8s linear infinite;
-        box-shadow: -1px 0px 10px #000;
+    width: 201px;
+    height: 105px;
+    margin: 100px auto;
+    background-image: linear-gradient(to left, rgb(153, 152, 152), rgb(133, 122, 59));
+    background-image: URL("./images/pagain.png");
+    background-color: hsl(58, 100%, 50%);
+    border: 4px inset white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    animation: brath 8s linear infinite;
+    box-shadow: -1px 0px 10px #000;
+    cursor: pointer;
 }
 
 .off {
