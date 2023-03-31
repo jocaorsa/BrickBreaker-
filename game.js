@@ -5,7 +5,7 @@ let wallCollision = document.getElementById("wall-collision");
 let lifeOut = document.getElementById("life-out");
 let victorySong = document.getElementById("victory-song");
 let reload = document.getElementById("reload");
-let loseSong = document.getElementById("lose-song")
+let loseSong = document.getElementById("lose-song");
 
 
 let start = document.querySelector(".start");
